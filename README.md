@@ -13,6 +13,10 @@ To assemble and debug `sample.asm` using gdb with Text User Interface:
 ```
 make ui
 ```
+To assemble and debug `sample.asm` using gdb with commands from a separate `input.txt` file:
+```
+make i
+```
 To delete `sample.o`:
 ```
 make clean
@@ -26,5 +30,6 @@ You can use `f=filename` to specify the filename of the `.asm` file without edit
 make f=helloworld
 make d f=helloworld
 make ui f=helloworld
+make i f=helloworld
 ```
 This will do the commands to `helloworld.asm` instead of `sample.asm`.

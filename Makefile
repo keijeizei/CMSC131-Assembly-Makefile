@@ -3,13 +3,17 @@ f = sample
 
 default: load
 
-#debug using GDB
+#debug: debug using GDB
 d: link
 	gdb -quiet -ex 'file $(f)' -ex 'set disassembly-flavor intel'
 
-#debug using GDB TUI
+#ui: debug using GDB TUI
 ui: link
 	gdb -quiet -tui -ex 'file $(f)' -ex 'set disassembly-flavor intel' -ex 'layout asm' -ex 'layout regs'
+
+#input: debug using commands from a separate file input.txt
+i: link
+	gdb -quiet $(f) < input.txt
 
 load: link
 	./$(f)
